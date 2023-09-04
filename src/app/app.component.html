@@ -6,8 +6,21 @@
   <input type="text" name="apellido"  [(ngModel)]="apellido"><br><br>
   <input type="submit" value="Registrar" (click)="registrarUsuario()">
 </form>
-<p *ngIf="registrado">{{mensaje}} con el nombre {{nombre}} {{apellido}}</p>
+<p *ngIf="registrado;else sinRegistrar">{{mensaje}} con el nombre {{nombre}} {{apellido}}</p>
 <!-- es un condicional que registrado es = true se pueda mostrar el mensaje -->
 <!-- basicamente modifica el dom de una manera dinamica y 
 se pueden ocultar un elemento asi dando un cierto dinamismo a la pagina y logrando una
 mejor optimizacion de la pagina -->
+<!-- tambien tiene su correspondiente else el ngif -->
+<ng-template #sinRegistrar>
+  <p>Nadie registrado</p>
+</ng-template>
+<!-- por defecto no carga pero si se le relaciona un else si se muestra -->
+<!-- lo que ahi realiza es que el ng-template siempre va a cagarse en la pagina 
+a diferencia del ngif pero se relaciono con la accion del else para mostrar lo que 
+tiene la etiqueta ng-template dentro que en este caso seria el <p> -->
+<br>
+<br>
+<ul>
+  <li *ngFor="let entrada of entradas">{{entrada.titulo}}</li>
+</ul>
