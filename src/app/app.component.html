@@ -4,9 +4,12 @@
   <input type="text" name="nombre" [(ngModel)]="nombre"><br>
   <label>Apellido:</label><br>
   <input type="text" name="apellido"  [(ngModel)]="apellido"><br><br>
+  <label>Cargo:</label><br>
+  <input type="text" name="cargo"  [(ngModel)]="cargo"><br><br>
   <input type="submit" value="Registrar" (click)="registrarUsuario()">
 </form>
-<p *ngIf="registrado;else sinRegistrar">{{mensaje}} con el nombre {{nombre}} {{apellido}}</p>
+<p *ngIf="registrado;else sinRegistrar">{{mensaje}} con el nombre <span [ngClass]="{paraDirectores:nombre=='marcelo'}">{{nombre}}</span> {{apellido}} y 
+  tiene el cargo de <span [ngStyle]="{color:cargo=='director'? 'gold':'black'}">{{cargo}}</span></p>
 <!-- es un condicional que registrado es = true se pueda mostrar el mensaje -->
 <!-- basicamente modifica el dom de una manera dinamica y 
 se pueden ocultar un elemento asi dando un cierto dinamismo a la pagina y logrando una

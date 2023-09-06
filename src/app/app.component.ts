@@ -12,6 +12,7 @@ export class AppComponent {
   apellido="";
   entradas:any[];//esto por motivo de que no reconoce el object[]
   //lo que hace esta variable es almanacenar una matriz de objetos
+  cargo:string=''//para directivas ngclass
 
   constructor(){//contructor que posee el array de objetos de todas las entradas 
     this.entradas=[

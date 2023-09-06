@@ -4,3 +4,8 @@ h1{
    text-transform: uppercase;
    text-align: center;
 }
+.paraDirectores{
+   color: gold;
+   font-weight: bold;
+   text-decoration: underline;
+}
